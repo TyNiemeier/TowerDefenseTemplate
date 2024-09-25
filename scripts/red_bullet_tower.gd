@@ -5,10 +5,15 @@ var pathName
 var currTargets = []
 var curr
 
-var Bullet = preload("res://scenes/red_bullet_tower.tscn")
+var bullet = preload("res://scenes/character_body_2d.tscn")
 
 
-
+func _process(delta):
+	if is_instance_valid(curr):
+		self.look_at(curr.global_position)
+	else:
+		for i in get_node("BulletContainer").get_child_count():
+			get_node("BulletContainer").get_child(1).queue_free()
 
 
 
@@ -35,14 +40,14 @@ func _on_range_body_entered(body):
 		curr = currTarget
 		pathName = currTarget.get_parent().name
 
-var tempBullet = Bullet.instantiate()
+		var tempBullet = bullet.instantiate()
 		
-tempBullet.pathName = pathName
-tempBullet.bulletDamage = bulletDamage
-var bulletContainer = get_node("BulletContainer")
-bulletContainer.call_deferred("add_child", tempBullet)
-tempBullet.global_position = $Aim.global_position
-		
+		#tempBullet.pathName = pathName
+		tempBullet.bulletDamage = bulletDamage
+		var bulletContainer = get_node("BulletContainer")
+		bulletContainer.call_deferred("add_child", tempBullet)
+		tempBullet.global_position = $Aim.global_position
+
 
 
 func _on_range_body_exited(body):
