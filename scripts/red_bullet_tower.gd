@@ -19,7 +19,6 @@ func _process(delta):
 
 
 func _on_range_body_entered(body):
-	print(body.name)
 	if "Soldier A" in body.name:
 		var tempArray = []
 		currTargets = get_node("Range").get_overlapping_bodies()
@@ -41,6 +40,8 @@ func _on_range_body_entered(body):
 		pathName = currTarget.get_parent().name
 
 		var tempBullet = bullet.instantiate()
+
+		tempBullet.target = currTarget
 		
 		#tempBullet.pathName = pathName
 		tempBullet.bulletDamage = bulletDamage
