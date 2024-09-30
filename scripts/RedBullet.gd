@@ -25,7 +25,6 @@ func _physics_process(delta):
 	
 
 func _on_area_2d_body_entered(body:Node2D):
-	print (body.name)
 	if body is Soldier:
 		body.Health -= bulletDamage
 		queue_free()
