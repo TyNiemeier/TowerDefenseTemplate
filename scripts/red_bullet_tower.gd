@@ -13,7 +13,7 @@ func _process(delta):
 		self.look_at(curr.global_position)
 	else:
 		for i in get_node("BulletContainer").get_child_count():
-			get_node("BulletContainer").get_child(1).queue_free()
+			get_node("BulletContainer").get_child(1)
 
 
 

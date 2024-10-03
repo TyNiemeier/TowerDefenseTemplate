@@ -3,10 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://b4o3dl5wx3i45" path="res://scenes/RedTowerPanel.tscn" id="1_34k4p"]
 
 [node name="UI" type="CanvasLayer"]
+follow_viewport_enabled = true
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 2944.0
-offset_right = 3328.0
+offset_left = 3200.0
+offset_right = 3584.0
 offset_bottom = 2048.0
 
 [node name="FlowContainer" type="FlowContainer" parent="Panel"]
