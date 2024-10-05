@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Soldier
 
-@export var speed : float = 100
+@export var speed : float = 500
 var Health = 10
 var time_in_seconds = 1
 var can_spawn = true
