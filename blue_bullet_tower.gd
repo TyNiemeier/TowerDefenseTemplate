@@ -1,11 +1,4 @@
-extends StaticBody2D
-class_name Tower
-var bulletDamage = 5
-var pathName
-var currTargets = []
-var curr
-
-var bullet = preload("res://scenes/character_body_2d.tscn")
+extends Tower
 
 
 func _process(delta):
